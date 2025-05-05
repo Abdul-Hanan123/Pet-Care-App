@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Health Checker | PetCare</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/ai-health.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-paw"></i>
+        <span>PetCare</span>
+      </a>
+      <a href="index.html" class="btn btn-outline">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>AI Pet Health Checker</h1>
+      <p>Get instant guidance about your pet's symptoms with our veterinarian-approved AI assistant.</p>
+      <a href="#checker" class="btn btn-primary">Check Symptoms Now</a>
+    </div>
+  </section>
+
+  <!-- Checker Section -->
+  <section class="checker" id="checker">
+    <div class="container">
+      <div class="checker-container">
+        <div class="checker-header">
+          <h2><i class="fas fa-stethoscope"></i> Symptom Checker</h2>
+          <p>Enter your pet's symptoms below for immediate analysis and recommendations</p>
+        </div>
+        
+        <div class="checker-form">
+          <div class="form-group">
+            <label for="pet-type">Pet Type</label>
+            <select id="pet-type" class="form-control">
+              <option value="">Select your pet type...</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="bird">Bird</option>
+              <option value="rabbit">Rabbit</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="symptoms">Symptoms</label>
+            <select id="symptoms" class="form-control">
+              <option value="">Select primary symptom...</option>
+              <option value="lethargy">Lethargy</option>
+              <option value="vomiting">Vomiting</option>
+              <option value="diarrhea">Diarrhea</option>
+              <option value="coughing">Coughing</option>
+              <option value="appetite">Loss of Appetite</option>
+              <option value="itching">Excessive Itching</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="duration">Duration</label>
+            <select id="duration" class="form-control">
+              <option value="">How long has this been going on?</option>
+              <option value="hours">Less than 24 hours</option>
+              <option value="1-2">1-2 days</option>
+              <option value="3-7">3-7 days</option>
+              <option value="week+">More than a week</option>
+            </select>
+          </div>
+          
+          <button class="btn btn-check" id="analyze-btn">
+            <i class="fas fa-search"></i> Analyze Symptoms
+          </button>
+        </div>
+        
+        <div id="result" class="result-card">
+          <div class="result-header">
+            <div class="result-icon">
+              <i class="fas fa-diagnoses"></i>
+            </div>
+            <div class="result-title" id="result-title">Analysis Result</div>
+          </div>
+          <div id="result-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</div>
+          <div class="action-items" id="action-items">
+            <h4>Recommended Actions:</h4>
+            <ul id="action-list"></ul>
+          </div>
+          <button class="btn btn-emergency" id="emergency-btn" style="display: none;">
+            <i class="fas fa-phone-alt"></i> Find Emergency Vet Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Use Our AI Health Checker?</h2>
+        <p>Instant access to veterinary knowledge when you need it most</p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <i class="fas fa-clock"></i>
+          <h3>24/7 Availability</h3>
+          <p>Get guidance anytime, day or night, when your regular vet might not be available.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <i class="fas fa-user-md"></i>
+          <h3>Vet-Approved</h3>
+          <p>Our AI is trained on thousands of real veterinary cases and medical guidelines.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <i class="fas fa-history"></i>
+          <h3>Symptom History</h3>
+          <p>Track your pet's symptoms over time to identify patterns and potential health issues.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Peace of Mind for Pet Parents</h2>
+      <p>Don't wonder if it's serious - get AI-powered guidance anytime, anywhere.</p>
+      <div class="cta-buttons">
+        <a href="#checker" class="btn btn-primary">Try the Health Checker</a>
+        <a href="#" class="btn btn-outline">Learn How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <!-- [Footer content same as previous template] -->
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

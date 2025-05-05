@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | PetCare</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/sign-up.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-paw"></i>
+        <span>PetCare</span>
+      </a>
+      <a href="index.html" class="btn btn-outline">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1><i class="fas fa-user-plus"></i> Create Account</h1>
+        <p>Join PetCare to access all features for your pet's health and wellness</p>
+      </div>
+
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-input">
+            <input type="password" id="password" class="form-control" placeholder="Create a password" required>
+            <i class="fas fa-eye password-toggle" id="toggle-password"></i>
+          </div>
+          <small class="text-muted">Minimum 8 characters with at least 1 number</small>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <div class="password-input">
+            <input type="password" id="confirm-password" class="form-control" placeholder="Confirm your password" required>
+            <i class="fas fa-eye password-toggle" id="toggle-confirm-password"></i>
+          </div>
+        </div>
+
+        <div class="form-group form-check">
+          <input type="checkbox" id="terms" class="form-check-input" required>
+          <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Create Account
+        </button>
+      </form>
+
+      <div class="divider">or</div>
+
+      <div class="social-login">
+        <a href="#" class="social-btn google">
+          <i class="fab fa-google"></i> Sign up with Google
+        </a>
+        <a href="#" class="social-btn facebook">
+          <i class="fab fa-facebook-f"></i> Sign up with Facebook
+        </a>
+      </div>
+
+      <div class="auth-footer">
+        Already have an account? <a href="login.html">Log in</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <i class="fas fa-paw"></i>
+            <span>PetCare</span>
+          </div>
+          <p>AI-powered pet health and wellness platform designed with love for your furry family members.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Features</h3>
+          <ul>
+            <li><a href="#">Smart Profiles</a></li>
+            <li><a href="#">Health Checker</a></li>
+            <li><a href="#">Vaccine Tracker</a></li>
+            <li><a href="#">Nutrition Guide</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        &copy; 2023 PetCare. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
