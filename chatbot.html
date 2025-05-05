@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare - AI-Powered Pet Health</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet"  href="css/index-style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-paw"></i>
+                <span>PetCare</span>
+            </a>
+            <a href="index.html" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </header>
+
+    <!-- AI Chatbot Main Content -->
+    <main class="container">
+        <div class="chatbot-container">
+            <div class="chatbot-header">
+                <div class="chatbot-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h1>PetCare AI Assistant</h1>
+                <p>Ask me anything about pet behaviors, health issues, training tips, and more!</p>
+            </div>
+
+            <div class="chat-window" id="chat-window">
+                <div class="message bot-message">
+                    <p>Hello! I'm your PetCare AI assistant. How can I help you with your pet today? Here are some
+                        things I can help with:</p>
+                    <ul>
+                        <li>Pet behavior questions</li>
+                        <li>Health symptoms and advice</li>
+                        <li>Training tips</li>
+                        <li>Nutrition guidance</li>
+                        <li>Emergency first aid</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Ask about your pet...">
+                <button id="send-button"><i class="fas fa-paper-plane"></i></button>
+            </div>
+
+            <div class="suggested-questions">
+                <h3>Common Questions:</h3>
+                <div class="question-buttons">
+                    <button class="question-btn">Why is my dog scratching so much?</button>
+                    <button class="question-btn">Is chocolate really bad for cats?</button>
+                    <button class="question-btn">How often should I bathe my rabbit?</button>
+                    <button class="question-btn">What are signs of stress in birds?</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (same as your main page) -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>PetCare</h3>
+                <p>AI-powered pet health and wellness platform designed with love for your furry family members.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">AI Health Checker</a></li>
+                    <li><a href="#">Vaccine Tracker</a></li>
+                    <li><a href="#">Nutrition Guide</a></li>
+                    <li><a href="#">Pet Community</a></li>
+                    <li><a href="#">Nearby Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> hello@petcare.com</li>
+                    <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Pet Street, San Francisco, CA</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 PetCare. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of
+                Service</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const chatWindow = document.getElementById('chat-window');
+            const userInput = document.getElementById('user-input');
+            const sendButton = document.getElementById('send-button');
+            const questionButtons = document.querySelectorAll('.question-btn');
+
+            function addMessage(text, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+                messageDiv.innerHTML = `<p>${text}</p>`;
+                chatWindow.appendChild(messageDiv);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            }
+
+            function showTyping() {
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'typing-indicator';
+                typingDiv.id = 'typing-indicator';
+                typingDiv.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+                chatWindow.appendChild(typingDiv);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            }
+
+            function hideTyping() {
+                const typingDiv = document.getElementById('typing-indicator');
+                if (typingDiv) typingDiv.remove();
+            }
+
+            function processInput() {
+                const question = userInput.value.trim();
+                if (!question) return;
+
+                addMessage(question, true);
+                userInput.value = '';
+
+                showTyping();
+
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage("Thanks for your question! In a real implementation, this would connect to an AI service to provide pet care advice.", false);
+                }, 1500);
+            }
+
+            // Event listeners
+            sendButton.addEventListener('click', processInput);
+            userInput.addEventListener('keypress', (e) => e.key === 'Enter' && processInput());
+            questionButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    userInput.value = btn.textContent;
+                    userInput.focus();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
